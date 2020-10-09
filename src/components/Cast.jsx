@@ -9,7 +9,7 @@ export default function Cast({cast}) {
 
 
 
-    <Thumbnail src={URL_IMG+IMG_SIZE_XSMALL+cast.profile_path} alt={cast.name} style={{height:"22vh"}}>
+    <Thumbnail src={URL_IMG+IMG_SIZE_XSMALL+cast.profile_path} alt={cast.name} style={{height:"25vh"}}>
       <p>{cast.name}</p>
     </Thumbnail>
     </div>

@@ -3,6 +3,7 @@ import { CastList, TrailerList} from '../components';
 import { CAST_MAX_NUM, TRAILER_MAX_NUM } from '../const';
 import { Grid, Row, Col} from 'react-bootstrap';
 import { MovieInfo, Poster } from '../components';
+import SimilarMovies from "../components/SimilarMovies"
 import { connect } from 'react-redux';
 import { fetchMovieDetail, fetchCastList, fetchTrailerList} from '../actions';
 
@@ -31,7 +32,6 @@ class MovieDetail extends Component {
   //     }
   //     return false;
   // }
-
   render() {
     const {movie, casts, trailers, isFetcing_movie, isFetcing_casts, isFetcing_trailers} = this.props;
 
@@ -45,11 +45,21 @@ class MovieDetail extends Component {
             <Col xs={12} sm={6} md={4}>
               <Poster id={movie.id} path={movie.poster_path} responsive />
             </Col>
+
             <Col xs={12} sm={6} md={8}>
               <MovieInfo movie={movie}/>
               <CastList data={casts.slice(0,CAST_MAX_NUM)} />
+              <Row>
+                
+                <SimilarMovies data={movie.similar} />
+              </Row>
+              
+
             </Col>
           </Row>
+          
+
+          
           
          
             <TrailerList data={trailers.slice(0,TRAILER_MAX_NUM)} />

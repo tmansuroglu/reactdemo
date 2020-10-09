@@ -1,4 +1,4 @@
-import {URL_LIST,URL_SEARCH, URL_DETAIL, URL_PERSON, URL_CAST, URL_VIDEO, API_KEY, API_KEY_ALT} from '../const';
+import {URL_LIST,URL_SEARCH, URL_DETAIL, URL_PERSON, URL_CAST, URL_VIDEO, API_KEY, API_KEY_ALT, GET_SIMILAR} from '../const';
 // action types
 export const SEARCH_MOVIE = 'SEARCH_MOVIE';
 export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
@@ -162,7 +162,8 @@ export function fetchMovieList(option){
 }
 
 export function fetchMovieDetail(id){
-  const url_movie = URL_DETAIL + id + API_KEY;
+
+  const url_movie = URL_DETAIL + id + API_KEY + GET_SIMILAR;
   return function(dispatch){
     dispatch(fetchMovie())
     return fetch(url_movie)
