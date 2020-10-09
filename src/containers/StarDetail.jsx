@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StarInfo, Poster, MovieList} from '../components';
 import SubTitle from '../components/SubTitle'
-import { Grid, Row, Col} from 'react-bootstrap/lib';
+import { Grid, Row, Col} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { fetchStarDetail, fetchMovieList } from '../actions';
 

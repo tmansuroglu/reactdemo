@@ -16,13 +16,13 @@ export default function MovieInfo(props){
           <Title title={props.movie.title} />
         </Row>
         <Row>
-          <Col xs={4}>
+          <Col xs={4} sm={4} md={4}>
             <SubTitleWithIcon icon={'star'} title={props.movie.vote_average} />
           </Col>
-          <Col xs={4}>
+          <Col xs={4} sm={4} md={4}>
             <SubTitleWithIcon icon={'heart'} title={props.movie.vote_count} />
           </Col>
-          <Col xs={4}>
+          <Col xs={4} sm={4} md={4}>
             <SubTitle title={props.movie.release_date.substring(0,4)} />
           </Col>
         </Row>

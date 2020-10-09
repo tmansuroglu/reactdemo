@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Navbar, Image } from 'react-bootstrap/lib'
+import { Navbar, Image, Button ,Row } from 'react-bootstrap'
 import TMDBlogo from '../images/themoviedb_green.svg'
 import logo from '../images/logo_square.svg'
 import { connect } from 'react-redux'
@@ -77,7 +77,7 @@ class SearchBar extends Component {
   renderSuggestion = (suggestion) => {
     return (
       <div>
-      <img alt="" className="searchResult-image" src= {suggestion.img == null ? logo: URL_IMG+IMG_SIZE_XSMALL+suggestion.img } />
+      <img alt="" className="searchResult-image" src={suggestion.img == null ? logo: URL_IMG+IMG_SIZE_XSMALL+suggestion.img } />
         <div className="searchResult-text">
           <div className="searchResult-name">
             {suggestion.title}
@@ -100,7 +100,8 @@ class SearchBar extends Component {
     fontWeight: 'bold',
     textTransform: 'caplitalize',
     paddingLeft: 10,
-    fontSize: '1.2em'
+    fontSize: '1.2em',
+    color:"gray"
   };
 
   const imgStyle = {
@@ -126,7 +127,9 @@ class SearchBar extends Component {
           <a href="#/"><span style={brandStyle}>{this.props.brand}</span><Image style={imgStyle} src={TMDBlogo}/></a>
         </Navbar.Brand>
       </Navbar.Header>
+      
       <Navbar.Form pullRight>
+        <Row>
         <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -134,8 +137,13 @@ class SearchBar extends Component {
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           getSuggestionValue={this.getSuggestionValue}
           renderSuggestion={this.renderSuggestion}
-          inputProps={inputProps} />
+          inputProps={inputProps} 
+          />
+          <Button variant="link" onClick={()=>alert("Search button doesn't work!")}>Search</Button>
+          </Row>
       </Navbar.Form>
+      
+      
     </Navbar>
   );
 

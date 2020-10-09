@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CastList, TrailerList} from '../components';
 import { CAST_MAX_NUM, TRAILER_MAX_NUM } from '../const';
-import { Grid, Row, Col} from 'react-bootstrap/lib';
+import { Grid, Row, Col} from 'react-bootstrap';
 import { MovieInfo, Poster } from '../components';
 import { connect } from 'react-redux';
 import { fetchMovieDetail, fetchCastList, fetchTrailerList} from '../actions';
@@ -50,9 +50,10 @@ class MovieDetail extends Component {
               <CastList data={casts.slice(0,CAST_MAX_NUM)} />
             </Col>
           </Row>
-          <Row>
+          
+         
             <TrailerList data={trailers.slice(0,TRAILER_MAX_NUM)} />
-          </Row>
+          
         </Grid>
       );
     } else
